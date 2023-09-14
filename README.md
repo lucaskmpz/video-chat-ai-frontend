@@ -1,27 +1,69 @@
-# React + TypeScript + Vite
+# Chat with Video Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Chat with Video application is a user-friendly platform that allows you to upload a video file and prompt an artificial intelligence (AI) model to generate text-based responses based on the content of the video. This unique combination of video and text-based chat provides an innovative way to interact with AI, making it possible to extract information, insights, or even creative responses from video content.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This application leverages a variety of technologies to provide a seamless user experience:
 
-## Expanding the ESLint configuration
+- **React**: A popular JavaScript library for building user interfaces.
+- **Tailwind CSS**: A utility-first CSS framework that streamlines UI development with a focus on utility classes.
+- **Radix UI**: A set of low-level UI primitives for React that helps create accessible and composable UI components.
+- **Shadcn UI**: A custom UI component library that extends Tailwind CSS with additional components and functionality.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+By combining the power of Tailwind CSS, Radix UI, and Shadcn UI, the application offers a highly customizable and visually appealing interface while maintaining accessibility and user-friendly functionality.
 
-- Configure the top-level `parserOptions` property like this:
+## Prerequisites
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+Before you start using the Chat with Video application, ensure you have the following:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **Node.js and npm**: Make sure you have Node.js (version 14 or higher) and npm (Node Package Manager) installed on your system.
+
+- **Backend Service**: The application assumes you have a corresponding backend service in place to handle video processing and AI interactions. This readme focuses on the frontend components.
+
+## Usage
+
+To use the Chat with Video application, follow these steps:
+
+1. **Clone the Repository**: Clone this repository to your local machine.
+
+   ```bash
+   git clone https://github.com/your-username/your-frontend-repo.git
+   cd your-frontend-repo
+   ```
+
+2. **Install Dependencies**: Install the required dependencies using npm.
+
+   ```bash
+   npm install
+   ```
+
+3. **Configuration**: Configure the frontend to communicate with your backend service. Ensure that the API endpoints and any necessary environment variables are correctly set to interact with your backend.
+
+4. **Start the Application**: Start the development server.
+
+   ```bash
+   npm start
+   ```
+
+5. **Access the Application**: Open your web browser and navigate to `http://localhost:3000`. You will now be able to use the Chat with Video application.
+
+## How It Works
+
+The Chat with Video application seamlessly integrates video content with text-based AI interactions:
+
+1. **Video Upload**: Users can upload a video file in MP4 format using the "Select a video" button. The selected video serves as the source for AI-based responses.
+
+2. **Transcription Prompt**: Users enter keywords or prompts in the "Transcription prompt" field. These prompts guide the AI model in generating text-based responses based on the video content. The special variable `{transcription}` can be used in prompts to include the video's transcription in the responses.
+
+3. **Prompt and Model Selection**: Users can select predefined prompts and AI models from the dropdown menus. This allows users to customize the AI interaction to suit their needs.
+
+4. **Temperature Control**: The application offers a temperature slider that users can adjust. Higher values result in less precise but potentially more creative AI-generated responses.
+
+5. **Transcription Generation**: Clicking the "Run" button triggers a request to the backend service. The backend utilizes OpenAI or a similar transcription model to process the video and generate text-based responses based on the provided prompts.
+
+6. **Display Transcription**: The generated transcription is displayed in the "Result generated by the AI..." text area. Users can review and utilize the AI-generated text as needed.
+
+7. **Customization**: The application is highly customizable. You can modify the UI, integrate additional features, or enhance functionality to meet your specific project requirements.
+
+By combining the strengths of Tailwind CSS, Radix UI, and Shadcn UI, this application provides a responsive and accessible interface for seamless interactions between users, video content, and AI-generated responses. It offers a flexible and engaging way to extract valuable information from video content while allowing for easy customization and extension of functionality to suit diverse use cases.
