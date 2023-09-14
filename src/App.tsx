@@ -1,9 +1,10 @@
-import { Github, FileVideo, Upload } from 'lucide-react'
+import { Github, FileVideo, Upload, Wand2 } from 'lucide-react'
 import { Button } from "./components/ui/button"
 import { Separator } from './components/ui/separator'
 import { Textarea } from './components/ui/textarea'
 import { Label } from '@radix-ui/react-label'
-import { Select, SelectTrigger, SelectValue } from './components/ui/select'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './components/ui/select'
+import { Slider } from './components/ui/slider'
 
 export function App() {
   return (
@@ -71,14 +72,53 @@ export function App() {
 
           <form className='space-y-6'>
             <div className='space-y-2'>
-              <Label>Model</Label>
+              <Label>Prompt</Label>
               <Select>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select a prompt..." />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value='title'>Youtube Title</SelectItem>
+                  <SelectItem value='description'>Youtube Description</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className='space-y-2'>
+              <Label>Model</Label>
+              <Select disabled defaultValue='gpt3.5'>
                 <SelectTrigger>
                   <SelectValue />
                 </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value='gpt3.5'>GPT 3.5-turbo 16k</SelectItem>
+                </SelectContent>
               </Select>
-
+              <span className='block text-xs text-muted-foreground italic'>
+                Customizable option soon
+              </span>
             </div>
+
+            <Separator />
+
+            <div className='space-y-4'>
+              <Label>Temperature</Label>
+              <Slider
+                min={0}
+                max={1}
+                step={0.1}
+              />
+              <span className='block text-xs text-muted-foreground italic leading-relaxed'>
+                Higher value means less precise results
+              </span>
+            </div>
+
+            <Separator />
+
+            <Button type='submit' className='w-full'>
+              Run
+              <Wand2 className='w-4 h-4 ml-2' />
+            </Button>
           </form>
         </aside>
       </main>
