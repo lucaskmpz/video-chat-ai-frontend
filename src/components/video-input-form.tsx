@@ -31,9 +31,10 @@ export function VideoInputForm() {
 
         await ffmpeg.writeFile("input.mp4", await fetchFile(video))
 
-        ffmpeg.on("log", log => {
-            console.log(log)
-        })
+        // ERROR PURPOSES
+        // ffmpeg.on("log", log => {
+        //     console.log(log)
+        // })
 
         ffmpeg.on("progress", progress => {
             console.log("Convert progress: " + Math.round(progress.progress * 100))
