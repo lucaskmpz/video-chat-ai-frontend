@@ -26,7 +26,9 @@ export function App() {
     body: {
       videoId,
       temperature,
-
+    },
+    headers: {
+      "Content-type": "application/json",
     }
   })
 
